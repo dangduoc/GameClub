@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Infrastructure.Persistence.Contexts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using WebAPI.Infrastructure;
@@ -42,3 +44,16 @@ public static class DependencyInjection
         return services;
     }
 }
+//public static class InitialiserExtensions
+//{
+//    public static async Task InitialiseDatabaseAsync(this WebApplication app)
+//    {
+//        using var scope = app.Services.CreateScope();
+
+//        var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+//        await context.Database.MigrateAsync();
+
+
+//    }
+//}

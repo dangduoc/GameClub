@@ -5,6 +5,7 @@ builder.Services.AddWebServices(builder.Configuration);
 // Add services to the container.
 
 var app = builder.Build();
+//await app.InitialiseDatabaseAsync();
 
 
 // Configure the HTTP request pipeline.
