@@ -1,0 +1,16 @@
+<a class="title">
+    {{data.title}}
+</a>
+<div class="date">
+    <span>Schedule At: </span> <strong>{{data.scheduledAt | date:'dd/MM/yyyy'}}</strong>
+</div>
+<div class="description">
+    @if(data.description){
+    <div [innerHTML]="data.description | safeHtml"></div>
+    }
+    @else {
+    <div>
+        No Description
+    </div>
+    }
+</div>

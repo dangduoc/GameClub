@@ -1,0 +1,12 @@
+.dialog-title {
+    font-size: 24px;
+}
+nz-form-item {
+    margin-bottom: 12px;
+    nz-form-label {
+        font-weight: 600;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

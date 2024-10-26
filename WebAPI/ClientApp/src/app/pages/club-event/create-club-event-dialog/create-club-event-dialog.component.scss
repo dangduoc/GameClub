@@ -1,0 +1,20 @@
+.dialog-title {
+    font-size: 24px;
+}
+.dialog-sub {
+    font-weight: 400;
+    margin-top: 8px;
+}
+input,
+nz-date-picker {
+    width: 100%;
+}
+nz-form-item {
+    margin-bottom: 12px;
+    nz-form-label {
+        font-weight: 600;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

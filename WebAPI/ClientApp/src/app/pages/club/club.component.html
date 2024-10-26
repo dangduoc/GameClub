@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="list-header">
+        <h1 class="header">
+            Game Club List
+        </h1>
+        <div class="actions">
+            <nz-input-group [nzSuffix]="suffixIconSearch">
+                <input appInputSearch [debounceTime]="500" (textChange)="onSearchTextChange($event)" nz-input
+                    placeholder="Search the list...">
+            </nz-input-group>
+            <ng-template #suffixIconSearch>
+                <span nz-icon nzType="search"></span>
+            </ng-template>
+
+            <button nz-button nzType="primary" (click)="openCreateDialog()">
+                <span nz-icon nzType="plus" nzTheme="outline"></span> Add Club
+            </button>
+        </div>
+    </div>
+    <div class="list">
+        <ng-container *ngFor="let item of items">
+            <app-club-box [data]="item"></app-club-box>
+        </ng-container>
+        <ng-container *ngIf="loading">
+            <div class="loading">
+                <span nz-icon nzType="loading" nzTheme="outline"></span>
+            </div>
+        </ng-container>
+    </div>
+    <div *ngIf="totalItems>items.length" style="margin-top: 12px;">
+        <button nz-button nzType="primary" (click)="loadMore()">Load more clubs...</button>
+    </div>
+</div>

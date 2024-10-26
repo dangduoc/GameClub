@@ -1,0 +1,32 @@
+<ng-template [nzModalTitle]>
+    <div class="dialog-title">Add Club Event</div>
+    <div class="dialog-sub">You are adding event to club: <strong>{{club.name}}</strong></div>
+</ng-template>
+
+<form nz-form [nzLayout]="'vertical'" [formGroup]="submitForm" (ngSubmit)="onSave()">
+    <nz-form-item>
+        <nz-form-label nzRequired>Title</nz-form-label>
+        <nz-form-control nzErrorTip="This field is required">
+            <input nz-input formControlName="title" placeholder="Input club event title" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label nzRequired>Schedule Date</nz-form-label>
+        <nz-form-control nzErrorTip="This field is required">
+            <nz-date-picker [nzFormat]="'dd/MM/yyyy'" nzPlaceHolder="Select schedule date. Format: date/month/year"
+                formControlName="scheduledAt"></nz-date-picker>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label>Description</nz-form-label>
+        <nz-form-control>
+            <textarea nz-input [rows]="3" formControlName="description"
+                placeholder="Input event description"></textarea>
+        </nz-form-control>
+    </nz-form-item>
+</form>
+
+<ng-template [nzModalFooter]>
+    <button [disabled]="submitForm.invalid" [nzLoading]="saving" nz-button nzType="primary" (click)="onSave()"
+        nzBlock>Save</button>
+</ng-template>

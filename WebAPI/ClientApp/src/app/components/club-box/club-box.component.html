@@ -1,0 +1,14 @@
+<a class="name" [routerLink]="['',data.id,'events']">
+    {{data.name}}
+</a>
+
+<div class="description">
+    @if(data.description){
+    <div [innerHTML]="data.description | safeHtml"></div>
+    }
+    @else {
+    <div>
+        No Description
+    </div>
+    }
+</div>

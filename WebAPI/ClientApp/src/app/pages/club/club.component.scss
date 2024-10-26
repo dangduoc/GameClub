@@ -1,0 +1,40 @@
+.container {
+    max-width: 800px;
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.list-header {
+    .header {
+    }
+    .actions {
+        display: flex;
+        gap: 12px;
+        nz-input-group {
+            flex: 1;
+            input {
+                width: 100%;
+            }
+        }
+        button {
+        }
+    }
+}
+
+.list {
+    margin-top: 16px;
+    app-club-box {
+        padding: 12px 0;
+        + app-club-box {
+            border-top: 1px solid #d9d9d9;
+        }
+    }
+}
+.loading {
+    width: 100%;
+    background-color: #fafafa;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
